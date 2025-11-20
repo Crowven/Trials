@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelPress - Blog de videojuegos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">🎮 PixelPress</div>
+    <nav>
+      <a href="index.html" class="active">Inicio</a>
+      <a href="article.html">Ver ejemplo</a>
+      <button class="admin-toggle" id="openAdmin">Panel redactor</button>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="hero">
+      <h1>Blog de videojuegos con modo Análisis</h1>
+      <p>Publica noticias rápidas o reviews completas con ficha técnica, pros y contras, y puntuaciones simuladas.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#listado">Ver artículos</a>
+        <button class="btn secondary" id="seedContent">Restaurar demo</button>
+      </div>
+    </section>
+
+    <section id="listado" class="card-grid">
+      <!-- Artículos renderizados por main.js -->
+    </section>
+  </main>
+
+  <div class="admin-panel" id="adminPanel">
+    <div class="admin-content">
+      <button class="close" id="closeAdmin">×</button>
+      <div id="authSection">
+        <h2>Acceso de redactor</h2>
+        <p>Introduce la contraseña para crear o editar entradas.</p>
+        <input type="password" id="adminPassword" placeholder="Contraseña" aria-label="Contraseña del panel">
+        <button id="loginBtn" class="btn full">Entrar</button>
+        <p class="hint">Pista: usa <code>pressstart</code></p>
+      </div>
+
+      <div id="editorSection" class="hidden">
+        <h2>Nuevo artículo</h2>
+        <form id="articleForm" class="form-grid">
+          <label>Título
+            <input type="text" id="title" required>
+          </label>
+          <label>Resumen breve
+            <input type="text" id="summary" maxlength="160" required>
+          </label>
+          <label>Imagen de portada (URL)
+            <input type="url" id="cover" placeholder="https://">
+          </label>
+          <label>Tipo de artículo
+            <select id="type">
+              <option value="standard">Noticia / estándar</option>
+              <option value="analysis">Análisis</option>
+            </select>
+          </label>
+          <label>Contenido principal
+            <textarea id="content" rows="4" required></textarea>
+          </label>
+          <label class="analysis-only hidden">Plataforma principal
+            <input type="text" id="platform" placeholder="PC, PS5, Switch...">
+          </label>
+          <label class="analysis-only hidden">Desarrolladora
+            <input type="text" id="developer" placeholder="Estudio responsable">
+          </label>
+          <label class="analysis-only hidden">Género
+            <input type="text" id="genre" placeholder="Acción, RPG, Indie...">
+          </label>
+          <label class="analysis-only hidden">Modo de juego
+            <input type="text" id="modes" placeholder="Singleplayer, Multiplayer">
+          </label>
+          <label class="analysis-only hidden">Capturas (URLs separadas por coma)
+            <input type="text" id="screenshots" placeholder="https://img1, https://img2">
+          </label>
+          <button type="submit" class="btn full">Publicar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Construido para demos rápidas: listado, panel de redacción y modo análisis con puntuación simulada.</p>
+  </footer>
+
+  <script src="analysis.js"></script>
+  <script src="main.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

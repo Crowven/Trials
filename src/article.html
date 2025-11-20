@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artículo | PixelPress</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">🎮 PixelPress</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="article.html" class="active">Artículo</a>
+    </nav>
+  </header>
+
+  <main class="layout article-page">
+    <article id="articleDetail" class="article-card">
+      <div class="article-meta"></div>
+      <h1></h1>
+      <p class="summary"></p>
+      <img class="cover" alt="Portada del artículo">
+      <div class="content"></div>
+      <section class="analysis-block" id="analysisBlock"></section>
+    </article>
+
+    <section class="comments" id="commentsSection">
+      <h2>Comentarios</h2>
+      <form id="commentForm" class="comment-form">
+        <input type="text" id="commentAuthor" placeholder="Tu nombre" required>
+        <textarea id="commentText" placeholder="Escribe tu mensaje" required></textarea>
+        <button type="submit" class="btn">Publicar comentario</button>
+      </form>
+      <div id="commentList" class="comment-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>La memoria de comentarios y entradas se guarda localmente en tu navegador.</p>
+  </footer>
+
+  <script src="analysis.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
